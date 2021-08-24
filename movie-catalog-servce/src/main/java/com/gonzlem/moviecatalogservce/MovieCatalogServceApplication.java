@@ -1,13 +1,13 @@
-package com.gonzlem.moviecaralogservice;
+package com.gonzlem.moviecatalogservce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MovieCaralogServiceApplication {
+public class MovieCatalogServceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MovieCaralogServiceApplication.class, args);
+        SpringApplication.run(MovieCatalogServceApplication.class, args);
     }
 
 }

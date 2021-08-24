@@ -1,10 +1,10 @@
-package com.gonzlem.moviecaralogservice;
+package com.gonzlem.moviecatalogservce;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MovieCaralogServiceApplicationTests {
+class MovieCatalogServceApplicationTests {
 
     @Test
     void contextLoads() {

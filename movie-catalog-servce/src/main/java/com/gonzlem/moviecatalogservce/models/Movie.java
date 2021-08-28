@@ -1,17 +1,25 @@
 package com.gonzlem.moviecatalogservce.models;
 
-public class CatalogItem {
+public class Movie {
+    private String movieId;
     private String title;
     private String description;
-    private int rating;
 
-    public CatalogItem(String title, String description, int rating) {
+    public Movie(String movieId, String title, String description) {
+        this.movieId = movieId;
         this.title = title;
         this.description = description;
-        this.rating = rating;
     }
 
-    public CatalogItem() {
+    public Movie() {
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
     }
 
     public String getTitle() {
@@ -28,13 +36,5 @@ public class CatalogItem {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
     }
 }

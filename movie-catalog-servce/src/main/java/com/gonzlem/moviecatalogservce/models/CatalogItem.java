@@ -1,8 +1,18 @@
 package com.gonzlem.moviecatalogservce.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "catalog_items")
 public class CatalogItem {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column
     private String title;
+    @Column
     private String description;
+    @Column
     private int rating;
 
     public CatalogItem(String title, String description, int rating) {
@@ -12,6 +22,14 @@ public class CatalogItem {
     }
 
     public CatalogItem() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -36,5 +54,15 @@ public class CatalogItem {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return "CatalogItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", rating=" + rating +
+                '}';
     }
 }

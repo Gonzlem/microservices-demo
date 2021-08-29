@@ -1,19 +1,28 @@
 package com.gonzlem.ratingsdataservice.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ratings")
 public class Rating {
-    private String movieId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer movieId;
     private int rating;
 
-    public Rating(String movieId, int rating) {
+    public Rating() {
+    }
+
+    public Rating(Integer movieId, int rating) {
         this.movieId = movieId;
         this.rating = rating;
     }
 
-    public String getMovieId() {
+    public Integer getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(String movieId) {
+    public void setMovieId(Integer movieId) {
         this.movieId = movieId;
     }
 

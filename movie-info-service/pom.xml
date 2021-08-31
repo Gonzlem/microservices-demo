@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
+        <version>2020.0.3</version>
     </properties>
     <dependencies>
         <dependency>
@@ -47,7 +47,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-parent</artifactId>
-                <version>Greenwich.RELEASE</version>
+                <version>2020.0.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

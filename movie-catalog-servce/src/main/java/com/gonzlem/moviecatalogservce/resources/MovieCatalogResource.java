@@ -28,7 +28,7 @@ public class MovieCatalogResource {
     @GetMapping("/{userId}")
     private List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 //        RestTemplate restTemplate = new RestTemplate(); // We no longer need this as we created a Bean to provide the singleton for us.
-        UserRating ratings = webBuilder.build().get().uri(String.format("http://localhost:8082/ratings/users/%s", userId)).
+        UserRating ratings = webBuilder.build().get().uri(String.format("http://ratings-data-service/ratings/users/%s", userId)).
                 retrieve().
                 bodyToMono(UserRating.class).
                 block();
@@ -41,7 +41,7 @@ public class MovieCatalogResource {
         // Newer way to do the rest call with WebClient counterpart to RestTemplate w/async.
         return ratings.getUserRatings().stream().map(rating -> {
             Movie movie = webBuilder.build().get().
-                    uri(String.format("http://localhost:8081/movies/%s", rating.getMovieId())).
+                    uri(String.format("http://movie-info-service/movies/%s", rating.getMovieId())). // We use the service name, we call eureka, get the host and port, and then makes the other call. (2 calls needed, as seen in theory)
                     retrieve().
                     bodyToMono(Movie.class). // Mono is a reactive way to say we're getting the object asynchronously.
                     block(); // As we are not doing the method return a Mono<> instance, we have to wait till we have the object already created before we can return it. So we're not fully using async.
